@@ -1,0 +1,35 @@
+#include <cstdlib>
+#include <iostream>
+#include<ctime>
+using namespace std;
+
+int main() 
+{
+    srand(static_cast<unsigned int>(time(0)));
+    int random_number = rand() % 100 + 1;
+    cout << "Enter a number" << endl;
+    int guessed_number;
+
+    // int choice = 10;
+    // for (int i = 0; i < choice; i++)
+    while(true) 
+    {
+        cin >> guessed_number;
+
+        if (random_number < guessed_number) 
+        {
+            cout << "The number is less than " << guessed_number << endl;
+        } 
+        else if (random_number > guessed_number)
+        {
+            cout << "The number is greater than " << guessed_number << endl;
+        }
+        else
+        {
+            cout<<"Congratulations! you have guessed the number"<<endl;
+            break;
+        }
+    }
+
+    return 0;
+}
